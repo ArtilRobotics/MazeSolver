@@ -4,7 +4,7 @@
 #ifndef LaberintoMotor_h
 #define LaberintoMotor_h
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 class LaberintoMotor
 {

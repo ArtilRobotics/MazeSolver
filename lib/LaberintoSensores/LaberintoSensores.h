@@ -5,7 +5,7 @@
 #ifndef LaberintoSensores_h
 #define LaberintoSensores_h
 
-#include "Arduino.h"
+#include <Arduino.h>
 
 class LaberintoSensores
 {

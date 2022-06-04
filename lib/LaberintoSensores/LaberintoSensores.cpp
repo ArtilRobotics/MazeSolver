@@ -3,8 +3,8 @@
  * creado por Carlos Cuesta
  */
 
- #include "Arduino.h"
- #include "LaberintoSensores.h"
+#include <Arduino.h>
+#include <LaberintoSensores.h>
 
 LaberintoSensores::LaberintoSensores(int RRLed[3],int RLLed[3],int ELed[3])
 {
