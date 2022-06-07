@@ -16,5 +16,8 @@ class LaberintoSensores
     int _RRLed[3];
     int _RLLed[3];
     int _ELed[3];
+    int RRLed[3];
+    int RLLed[3];
+    int ELed[3];
 };
 #endif
