@@ -40,6 +40,6 @@ int LaberintoSensores::RLeds()
   Serial.print(", ");
   }
   Serial.println();
-  
+  //Serial.println(sensores[6]);
   return sensores[6];
 }
