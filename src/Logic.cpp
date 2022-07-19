@@ -215,7 +215,7 @@ void loop()
 
 
     //motor.velmotor(70+turnSpeed, 70-turnSpeed);
-    if(front_right>30 && front_left>308)
+    if(front_right>30 && front_left>305)
     {
         motor.velmotor(0,0);
     }
