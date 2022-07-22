@@ -61,8 +61,9 @@ int side_left = 0;
 int diagonal_right = 0;
 int diagonal_left = 0;
 
-int distancia_right = 0;
-int distancia_left = 0;
+int dist_right = 420;
+int distancia_left = 628;
+int dif_right = 0;
 
 uint8_t turnangle;
 uint8_t offset = 4;
@@ -107,13 +108,17 @@ void mediaVuelta()
     motor.freno(1, 1);
 }
 
-void correccion_direccion(int velocidad, int divisor_comp)
+void correccion_direccion(int velocidad)
 {
     int diferencia_right;
-    diferencia_right = side_right - distancia_right;
+    diferencia_right = side_right - dist_right;
     int diferencia_left;
     diferencia_left = side_left - distancia_left;
-    motor.velmotor(velocidad + (diferencia_left / divisor_comp), velocidad + (diferencia_right / divisor_comp));
+
+    diferencia_left = constrain(diferencia_left, -40, 40);
+    diferencia_right = constrain(diferencia_right, -40, 40);
+
+    motor.velmotor(-(velocidad + diferencia_left), -(velocidad + diferencia_right));
 }
 
 void rotation(int16_t angulo)
@@ -159,9 +164,54 @@ void setup()
     turnSensorSetup();
     delay(500);
     turnSensorReset();
-    while (digitalRead(28) == 1)
+
+    // while (digitalRead(28) == 1)
+    //{
+    //}
+
+    for (int i = 0; i < 3; i++)
     {
+        digitalWrite(ELed[i], HIGH);
+        delay(3);
+        sensores[i * 2] = analogRead(RRLed[i]);
+        sensores[i * 2 + 1] = analogRead(RLLed[i]);
+        // Serial.print(sensores[i*2]);
+        // Serial.print(", ");
+        // Serial.println(sensores[i*2+1]);
+        digitalWrite(ELed[i], LOW);
+        delay(5);
     }
+
+    front_right = sensores[0];
+    front_left = sensores[1];
+    side_right = sensores[2];
+    side_left = sensores[3];
+    diagonal_right = sensores[4];
+    diagonal_left = sensores[5];
+
+    while (front_right < 900)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            digitalWrite(ELed[i], HIGH);
+            delay(3);
+            sensores[i * 2] = analogRead(RRLed[i]);
+            sensores[i * 2 + 1] = analogRead(RLLed[i]);
+            // Serial.print(sensores[i*2]);
+            // Serial.print(", ");
+            // Serial.println(sensores[i*2+1]);
+            digitalWrite(ELed[i], LOW);
+            delay(5);
+        }
+
+        front_right = sensores[0];
+        front_left = sensores[1];
+        side_right = sensores[2];
+        side_left = sensores[3];
+        diagonal_right = sensores[4];
+        diagonal_left = sensores[5];
+    }
+    delay(2000);
 }
 
 // Loop routine runs over and over again forever:
@@ -181,18 +231,19 @@ void loop()
     for (int i = 0; i < 3; i++)
     {
         digitalWrite(ELed[i], HIGH);
+        delay(3);
         sensores[i * 2] = analogRead(RRLed[i]);
         sensores[i * 2 + 1] = analogRead(RLLed[i]);
         // Serial.print(sensores[i*2]);
         // Serial.print(", ");
         // Serial.println(sensores[i*2+1]);
-        delay(10);
         digitalWrite(ELed[i], LOW);
+        delay(5);
     }
     for (int i = 0; i < 6; i++)
     {
         Serial.print(sensores[i]);
-        Serial.print(", ");
+        Serial.print(",");
     }
     Serial.println();
     // Serial.println(sensores[6]);
@@ -204,25 +255,65 @@ void loop()
     diagonal_right = sensores[4];
     diagonal_left = sensores[5];
 
-    turnSensorUpdate();
-    //Serial.print(turnAngle / turnAngle1);
-    //Serial.print(", ");
-    int32_t turnSpeed = -(int32_t)turnAngle / (turnAngle1 / 1.5) - turnRate / 80;
-    //Serial.println(turnSpeed);
-    // Constrain our motor speeds to be between
-    // -maxSpeed and maxSpeed.
-    turnSpeed = constrain(turnSpeed, -150, 150);
+    // correccion_direccion(0);
 
-
-    //motor.velmotor(70+turnSpeed, 70-turnSpeed);
-    if(front_right>30 && front_left>305)
+    /*if (side_right > dist_right || side_right < dist_right)
     {
-        motor.velmotor(0,0);
+        dif_right=(side_right-dist_right);
+        dif_right= constrain(dif_right,0,40);
+        //motor.velmotor(-(dif_right),dif_right);
+        Serial.println(dif_right);
+    }*/
+    
+    
+    if (side_right>442)
+    {
+        dif_right=30;
+        motor.velmotor(-80,80);
     }
-    //motor.velmotor(40,-40);
-    //rotation(90);
-    //motor.velmotor(0,0);
-    //delay(2000);
+    
+    else if (front_right > 255 && front_left > 170 && side_right > 350 && side_left > 600)
+    {
+        motor.velmotor(-70, 70);
+        rotation(180);
+    }
+
+    else if (front_right > 205 && front_left > 150 && side_right > 300 && side_left < 500)
+    {
+        motor.velmotor(20, 90);
+        rotation(45);
+    }
+
+    else if (side_right < 300)
+    {
+        motor.velmotor(70, 20);
+    }
+    
+
+    else
+    {
+        turnSensorUpdate();
+        // Serial.print(turnAngle / turnAngle1);
+        // Serial.print(", ");
+        int32_t turnSpeed = -(int32_t)turnAngle / (turnAngle1 / 1.5) - turnRate / 80;
+        // Serial.println(turnSpeed);
+        //  Constrain our motor speeds to be between
+        //  -maxSpeed and maxSpeed.
+        turnSpeed = constrain(turnSpeed, -150, 150);
+
+        motor.velmotor((115), (115));
+        dif_right = 0;
+        
+    }
+
+    // if (front_right > 30 && front_left > 138)
+    //{
+    //    motor.velmotor(0, 0);
+    //}
+    // motor.velmotor(40,-40);
+    // rotation(90);
+    // motor.velmotor(0,0);
+    // delay(2000);
 
     // velmotor(izquierdo,derecho)
 
