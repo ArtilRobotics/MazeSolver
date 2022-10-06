@@ -28,7 +28,7 @@ Por ejemplo en la siguiente imagen de muestra el conjunto de entrada del Sensor 
 
 ![Sensor Lateral Derecho](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Conjunto%20Sensor%20Lateral%20Derecho.png)
 
-Este mismo proceso se realizó para los otros 3 sensores. Esto se puede revisar en el archivo nativo de Matlab [Matlab](https://github.com/ArtilRobotics/MazeSolver/tree/main/Matlab/Intento%2029).
+Este mismo proceso se realizó para los otros 3 sensores. Esto se puede revisar detalladamente en la carpeta [Matlab](https://github.com/ArtilRobotics/MazeSolver/tree/main/Matlab/Intento%2029) dentro del repositorio.
 
 
 
