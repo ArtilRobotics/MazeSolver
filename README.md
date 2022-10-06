@@ -20,7 +20,7 @@ Sus variables de salida:
 
 Con la ayuda del software MATLAB y su herramienta Fuzzy Logic Desginer se desarrolló el controlador de la siguiente imagen:
 
-![Pantalla Principal](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Pantalla%20Principal%20Fuzzy%20Logic%20Designer.png)
+     ![Pantalla Principal](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Pantalla%20Principal%20Fuzzy%20Logic%20Designer.png)
 
 En esta imagen se puede observar las entradas al lado izquierda y al lado derecho las salidas. Cada uno de los recuadros represetan un conjunto. Dentro de estos conjuntos se encuentran los rangos de trabajo de las distintas variables.
 
