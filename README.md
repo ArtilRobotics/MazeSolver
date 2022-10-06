@@ -41,4 +41,4 @@ Primero se debe tener en cuenta que entre más subconjuntos se tengan, más regl
 - Si el sensor lateral derecha y el izquierdo no detecta un espacio libre, y los sensores frontales tampoco detectan un espacio, el robot girará 180°
 
 Todas estas reglas fueron ingresadas dentro de la herramienta de Matlab, como se indica en la siguiente imagen
-
+![Reglas](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Reglas.png)
