@@ -17,8 +17,6 @@ Las variables de entrada fueron:
 Sus variables de salida:
 - Velocidad del Motor Derecho
 - Velocidad del Motor Izquierdo
-<<<<<<< HEAD
 
-Con la ayuda del software MATLAB y su herramienta Fuzzy Logic Desginer, se desarrollo un controlador 
-=======
->>>>>>> a7352b054d9bae5e8d53b511f6d311b833de6634
+Con la ayuda del software MATLAB y su herramienta Fuzzy Logic Desginer se desarrolló el controlador de la siguiente imagen:
+![Pantalla Principal](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Pantalla%20Principal%20Fuzzy%20Logic%20Designer.png)
