@@ -26,3 +26,4 @@ En esta imagen se puede observar las entradas al lado izquierda y al lado derech
 
 Por ejemplo en la siguiente imagen de muestra el conjunto de entrada del Sensor Lateral Derecho. Dentro del cual se determina los distintos rangos de trabajo del sensor, en este caso su rango de trabajo total es de 0 a 1023. Uno de los problemas que se presentó en esta parte fue que los sensores al ser logarítmicos, su incremento no era lineal por lo cual los los subconjuntos tienen rangos diferentes.
 
+![Sensor Lateral Derecho](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Conjunto%20Sensor%20Lateral%20Derecho.png)
