@@ -49,8 +49,10 @@ Todas estas reglas fueron ingresadas dentro de la herramienta de Matlab, como se
 Como resultado de todas estas reglas, se obtiene una gráfica de control, con la que se puede analizar el comportamiento del robot dependiendo de la variación en las entradas.
 
 ![Grafica](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Gráfica%20Resultante%20Reglas.png)
-
+S
 También se puede analizar el comportamiento del controlador basándonse en los subconjuntos creados anteriormente
 
 ![Testeo](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Testeo%20de%20Subcojuntos.png)
+
+Ya con las reglas creadas, se procedió 
 
