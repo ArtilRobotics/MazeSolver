@@ -50,4 +50,7 @@ Como resultado de todas estas reglas, se obtiene una gráfica de control, con la
 
 ![Grafica](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Gráfica%20Resultante%20Reglas.png)
 
+También se puede analizar el comportamiento del controlador basándonse en los subconjuntos creados anteriormente
+
+![Testeo](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Testeo%20de%20Subcojuntos.png)
 
