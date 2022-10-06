@@ -24,6 +24,12 @@ Con la ayuda del software MATLAB y su herramienta Fuzzy Logic Desginer se desarr
 
 En esta imagen se puede observar las entradas al lado izquierda y al lado derecho las salidas. Cada uno de los recuadros represetan un conjunto. Dentro de estos conjuntos se encuentran los rangos de trabajo de las distintas variables.
 
-Por ejemplo en la siguiente imagen de muestra el conjunto de entrada del Sensor Lateral Derecho. Dentro del cual se determina los distintos rangos de trabajo del sensor, en este caso su rango de trabajo total es de 0 a 1023. Uno de los problemas que se presentó en esta parte fue que los sensores al ser logarítmicos, su incremento no era lineal por lo cual los los subconjuntos tienen rangos diferentes.
+Por ejemplo en la siguiente imagen de muestra el conjunto de entrada del Sensor Lateral Derecho. Dentro del cual se determina los subconjuntos, y el rango de trabajo, teniendo en cuenta que el rango de trabajo total del sensor es de 0 a 1023. Uno de los problemas que se presentó en esta parte fue que los sensores al ser logarítmicos, su incremento no era lineal por lo cual los los subconjuntos tienen rangos diferentes.
 
 ![Sensor Lateral Derecho](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Conjunto%20Sensor%20Lateral%20Derecho.png)
+
+Este mismo proceso se realizó para los otros 3 sensores. Esto se puede revisar en el archivo nativo de Matlab [Matlab](https://github.com/ArtilRobotics/MazeSolver/tree/main/Matlab/Intento%2029).
+
+
+
+Ahora para los conjuntos de salida.
