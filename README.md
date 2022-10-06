@@ -30,6 +30,6 @@ Por ejemplo en la siguiente imagen de muestra el conjunto de entrada del Sensor 
 
 Este mismo proceso se realizó para los otros 3 sensores. Esto se puede revisar detalladamente en la carpeta [Matlab](https://github.com/ArtilRobotics/MazeSolver/tree/main/Matlab/Intento%2029) dentro del repositorio.
 
-Para los conjuntos de salida, los 2 tendrás únicamente 2 subcojutos (Rápido y lento), en este caso de definió un rango de 0 a 50, ya que defirnirlo de 0 a 255, ya que es innecesario añadir una velocidad media, eso solo causaría una mayor carga de procesos a la tarjeta.
+Para los conjuntos de salida, los 2 tendrás únicamente 2 subcojutos (Rápido y lento), ya que es innecesario añadir una velocidad media, eso solo causaría una mayor carga de procesos a la tarjeta.
 
 ![Velocidad Motor Derecho](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Velocidad%20Motor%20Derecho.png)
