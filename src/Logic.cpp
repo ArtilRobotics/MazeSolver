@@ -266,19 +266,21 @@ void loop()
     }*/
     
     
-    if (side_right>442)
+    if (side_right>600)
     {
-        dif_right=30;
         motor.velmotor(-80,80);
     }
-    
-    else if (front_right > 255 && front_left > 170 && side_right > 350 && side_left > 600)
+    else if (side_left>990)
+    {
+        motor.velmotor(80,-80);
+    }
+    else if (front_right > 205 && front_left > 100 && side_right > 350 && side_left > 600)
     {
         motor.velmotor(-70, 70);
         rotation(180);
     }
 
-    else if (front_right > 205 && front_left > 150 && side_right > 300 && side_left < 500)
+    else if (front_right > 205 && front_left > 100 && side_right > 300 && side_left < 500)
     {
         motor.velmotor(20, 90);
         rotation(45);
@@ -301,7 +303,7 @@ void loop()
         //  -maxSpeed and maxSpeed.
         turnSpeed = constrain(turnSpeed, -150, 150);
 
-        motor.velmotor((115), (115));
+        motor.velmotor((100), (100));
         dif_right = 0;
         
     }

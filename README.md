@@ -1,2 +1,21 @@
 # MazeSolver
-Firmware para micromouse de laberinto 16x16cm estándar de competencia internacional All Japan classic Micromouse Contest
+MazeSolver es un robot MicroMouse desarrollado por Artil Robotics. Firmware para micromouse de laberinto 16x16cm estándar de competencia internacional All Japan classic Micromouse Contest
+
+## Programación
+Dentro de este apartado se desarrolló 2 tipos de programación
+- Fuzzy
+- Lógica
+
+### Programación Fuzzy
+Esta programación se basa en el desarrollo de reglas dependiendo de las variables de entradas y salida.
+Las variables de entrada fueron:
+- Sensor Infrarrojo Frontal Derecho 
+- Sensor Infrarrojo Frontal Izquierdo
+- Sensor Infrarrojo Lateral Derecho 
+- Sensor Infrarrojo Lateral Izquierdo
+
+Sus variables de salida:
+- Velocidad del Motor Derecho
+- Velocidad del Motor Izquierdo
+
+Con la ayuda del software MATLAB y su herramienta Fuzzy Logic Desginer, se desarrollo un controlador 
