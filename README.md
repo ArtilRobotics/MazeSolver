@@ -33,3 +33,12 @@ Este mismo proceso se realizó para los otros 3 sensores. Esto se puede revisar 
 Para los conjuntos de salida, los 2 tendrás únicamente 2 subcojutos (Rápido y lento), ya que es innecesario añadir una velocidad media, eso solo causaría una mayor carga de procesos a la tarjeta.
 
 ![Velocidad Motor Derecho](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Velocidad%20Motor%20Derecho.png)
+
+Formulación de Reglas
+
+Primero se debe tener en cuenta que entre más subconjuntos se tengan, más reglas serán necesarias. La forma de funcionamiento de este robot está básado en la regla de la mano derecha, dentro de ellas, se encuentran reglas como:
+- Si el sensor lateral derecho detecta un espacio libre independiente de que exista o no un espacio al frente, girará hacia la derecha
+- Si el sensor lateral derecha y el izquierdo no detecta un espacio libre, y los sensores frontales tampoco detectan un espacio, el robot girará 180°
+
+Todas estas reglas fueron ingresadas dentro de la herramienta de Matlab, como se indica en la siguiente imagen
+
