@@ -49,3 +49,5 @@ Todas estas reglas fueron ingresadas dentro de la herramienta de Matlab, como se
 Como resultado de todas estas reglas, se obtiene una gráfica de control, con la que se puede analizar el comportamiento del robot dependiendo de la variación en las entradas.
 
 ![Grafica](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Gráfica%20Resultante%20Reglas.png)
+
+
