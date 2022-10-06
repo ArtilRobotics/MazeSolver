@@ -43,3 +43,7 @@ Primero se debe tener en cuenta que entre más subconjuntos se tengan, más regl
 Todas estas reglas fueron ingresadas dentro de la herramienta de Matlab, como se indica en la siguiente imagen
 
 ![Reglas](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Reglas.png)
+
+Como resultado de todas estas reglas, se obtiene una gráfica de control, con la que se puede analizar el comportamiento del robot dependiendo de la variación en las entradas.
+
+
