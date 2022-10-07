@@ -70,7 +70,7 @@ Su funcionamiento es notablemente mejor que el controlador mejor ya que, es más
 - Si se trabaja con el valor máximo de velocidad, tener en cuenta la inercia del robot al momento de frenar.
 
 ## Tareas a Desarrollar o Corregir
-- [x] Desarrollar un programa para la autocalibración de los sensores
+- [ ] Desarrollar un programa para la autocalibración de los sensores
 - [ ] Añadir un menú en una pantalla para configuración de los parámetros de funcionamiento
 - [ ] Utilizar los 2 sensores diagonales presentes en el robot
 - [ ] Añadir un juego de engranajes para trabajar con 4 ruedas en lugar de 2
