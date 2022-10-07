@@ -59,6 +59,11 @@ Ya con las reglas creadas y analizadas, se procedió a cargar este controlador e
 ![Funcionamiento Fuzzy](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Funcionamiento%20Control%20Fuzzy.gif)
 
 ### Programación Lógica
-Para este apartado se procedió a desarrollar un controlador básado en el método de la mano derecho, utilizando en el programa anterior. La diferencia es que este fue desarrollado con condicionantes para su funcionamiento. 
+Para este apartado se procedió a desarrollar un controlador básado en el método de la mano derecho, utilizando en el programa anterior. La diferencia es que este fue desarrollado con condicionantes para su funcionamiento. Este código se encuentra en el [Controlador Lógico](https://github.com/ArtilRobotics/MazeSolver/blob/main/src/Logic.cpp).
+
+Su funcionamiento es notablemente mejor que el controlador mejor ya que, es más simple pero así vez, más efectivo.
 
 ![Funcionamiento Logic](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Funcionamiento%20Control%20Lógico.gif)
+
+## Conclusiones
+Al utilizar 2 tipos de controlares se pudo analizar su comportamiento. No se puede concluir que el controlador Fuzzy o borroso no sirva sino que depende de la aplicación puede llegar a ser mejor que un controlador desarrollado por lógica.
