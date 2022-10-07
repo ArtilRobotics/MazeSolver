@@ -56,6 +56,6 @@ También se puede analizar el comportamiento del controlador basándonse en los 
 
 Ya con las reglas creadas y analizadas, se procedió a cargar este controlador en el microcontrolador, mediante una página web se transforma un script de matlab en un código .ino compatible con arduino. Obteniendo el programa [Controlador Fuzzy](https://github.com/ArtilRobotics/MazeSolver/blob/main/src/fuzzy.cpp) al cargarlo en el robot, y su comportamiento se visualiza a continuación
 
-![Funcionamiento](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Control%20Fuzzy.gif)
+![Funcionamiento](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Funcionamiento%20Control%20Fuzzy.gif)
 
 
