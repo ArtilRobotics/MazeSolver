@@ -65,5 +65,13 @@ Su funcionamiento es notablemente mejor que el controlador mejor ya que, es más
 
 ![Funcionamiento Logic](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Funcionamiento%20Control%20Lógico.gif)
 
-## Conclusiones
-Al utilizar 2 tipos de controlares se pudo analizar su comportamiento. No se puede concluir que el controlador Fuzzy o borroso no sirva sino que depende de la aplicación puede llegar a ser mejor que un controlador desarrollado por lógica.
+
+
+## Consideraciones del Proyecto
+- Al trabajar con sensores infrarrojos, la variación luz afecta gravemente al funcionamiento del robot, ya que dentro de las programaciones se define unos rangos de trabajo, al variar la luz, los sensores se descalibran y el robot no responde a la acción requerida.
+- Si se trabaja con el valor máximo de velocidad, tener en cuenta la inercia del robot al momento de frenar.
+
+## Tareas a Desarrollar o Corregir
+- [ ] Desarrollar un programa para la autocalibración de los sensores
+- [ ] Añadir un menú en una pantalla para configuración de los parámetros de funcionamiento
+- [ ] Utilizar los 2 sensores diagonales presentes en el robot.
