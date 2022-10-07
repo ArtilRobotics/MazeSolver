@@ -58,4 +58,5 @@ Ya con las reglas creadas y analizadas, se procedió a cargar este controlador e
 
 ![Funcionamiento](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/Funcionamiento%20Control%20Fuzzy.gif)
 
+### Programación Lógica
 
