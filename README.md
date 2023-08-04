@@ -3,6 +3,13 @@ MazeSolver es un robot MicroMouse desarrollado por Artil Robotics. Firmware para
 
 ![MazeSolver](https://github.com/ArtilRobotics/MazeSolver/blob/main/image/MazeSolver.png)
 
+## Instalación
+### Instalción de Teensyduino
+Para poder programar el robot se debe instalar el paquete de tarjetas de la familia Teensy.
+Para esto, dentro de arduino, diriguirse a "Preferencias" y en el apartado "Additional boards managerl URLs" añadir el siguiente link:
+https://www.pjrc.com/teensy/package_teensy_index.json
+
+
 ## Programación
 Dentro de este apartado se desarrolló 2 tipos de programación
 - Fuzzy
