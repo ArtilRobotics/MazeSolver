@@ -14,9 +14,12 @@ public:
     int readLeftEncoder();
     int readRightEncoder();
     void IMUrotation(int16_t angulo);
-    int Sens();
+    int Sens(int pos_sensor);
     int IMUAngle();
-
+    void Sound(int sonido);
+    void Sound(int sonido,int timesound);
+    void stopSound();
+    float level_baterry();
     void run();
     void init();
 

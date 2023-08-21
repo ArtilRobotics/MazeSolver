@@ -3,11 +3,12 @@
 #include <laberintoMotor.h>
 #include <LaberintoSensores.h>
 #include <Encoder.h>
-#include <Wire.h>
+// #include <Wire.h>
 #include <Zumo32U4IMU.h>
-#include <Adafruit_GFX.h>
-#include <Adafruit_SSD1306.h>
+// #include <Adafruit_GFX.h>
+// #include <Adafruit_SSD1306.h>
 #include "../constants/pinout.h"
+
 
 LaberintoMotor Motores;
 LaberintoSensores Sensors;
@@ -30,18 +31,22 @@ int16_t deltaangle;
 
 int AngleIMU;
 
+int N_sensor;
+
+float volt_bat;
+
 int senso[6];
 
 void ArtilSolver::init()
 {
-    Motores.init(MA, AIN1, AIN2, MB, BIN1, BIN2);
-    Sensors.init(RRLed, RLLed, ELed);
     Wire.setSDA(17);
     Wire.setSCL(16);
     Wire.begin();
     turnSensorSetup();
     delay(500);
     turnSensorReset();
+    Motores.init(MA, AIN1, AIN2, MB, BIN1, BIN2);
+    Sensors.init(RRLed, RLLed, ELed);
 }
 
 void ArtilSolver::MotorSpeed(int velizq, int velder)
@@ -104,11 +109,10 @@ void ArtilSolver::IMUrotation(int16_t angulo)
     }
 }
 
-int ArtilSolver::Sens()
+int ArtilSolver::Sens(int pos_sensor)
 {
-Sensors.RLeds(senso);
-return senso[0];
-
+    Sensors.RLeds(senso);
+    return senso[pos_sensor];
 }
 
 int ArtilSolver::IMUAngle()
@@ -116,4 +120,26 @@ int ArtilSolver::IMUAngle()
     turnSensorUpdate();
     lastangle = abs(turnAngle / turnAngle1);
     return lastangle;
+}
+
+void ArtilSolver::Sound(int sonido)
+{
+    tone(Buzzer,sonido);
+}
+
+void ArtilSolver::Sound(int sonido,int timesound)
+{
+    tone(Buzzer,sonido,timesound);
+}
+
+void ArtilSolver::stopSound()
+{
+    noTone(Buzzer);
+}
+
+float ArtilSolver::level_baterry()
+{
+    volt_bat=analogRead(Volt_Battery);
+    volt_bat=volt_bat/100;
+    return volt_bat;
 }

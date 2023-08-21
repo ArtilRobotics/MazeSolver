@@ -9,6 +9,7 @@ Para poder programar el robot se debe instalar el paquete de tarjetas de la fami
 Para esto, dentro de arduino, diriguirse a "Preferencias" y en el apartado "Additional boards managerl URLs" añadir el siguiente link:
 https://www.pjrc.com/teensy/package_teensy_index.json
 
+Una vez instalado el paquete de tarjetas, seleccionar la tarjeta "Teensy 3.2/3.1"
 
 ## Programación
 Dentro de este apartado se desarrolló 2 tipos de programación
