@@ -409,10 +409,11 @@ void loop(void)
             u8g2.drawStr(10, 37, "Sensor FI:"); // write something to the internal memory
             u8g2.drawStr(10, 49, "Sensor LD:"); // write something to the internal memory
             u8g2.drawStr(10, 61, "Sensor LZ:"); // write something to the internal memory
-            sprintf(Sensor_FD, "%d", Robot.Sens(0));
-            sprintf(Sensor_FI, "%d", Robot.Sens(1));
-            sprintf(Sensor_LD, "%d", Robot.Sens(2));
-            sprintf(Sensor_LI, "%d", Robot.Sens(3));
+            Robot.SensorsUpdate();
+            sprintf(Sensor_FD, "%d", Robot.Val_Sensor(0));
+            sprintf(Sensor_FI, "%d", Robot.Val_Sensor(1));
+            sprintf(Sensor_LD, "%d", Robot.Val_Sensor(2));
+            sprintf(Sensor_LI, "%d", Robot.Val_Sensor(3));
             u8g2.drawStr(85, 25, Sensor_FD);
             u8g2.drawStr(85, 37, Sensor_FI);
             u8g2.drawStr(85, 49, Sensor_LD);

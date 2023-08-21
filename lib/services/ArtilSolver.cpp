@@ -87,7 +87,7 @@ int ArtilSolver::readLeftEncoder()
 void ArtilSolver::IMUrotation(int16_t angulo)
 {
     turnSensorUpdate();
-    // Serial.println("Hola");
+    //Serial.println("Hola");
 
     turnangle = 0;
     lastangle = abs(turnAngle / turnAngle1);
@@ -109,17 +109,31 @@ void ArtilSolver::IMUrotation(int16_t angulo)
     }
 }
 
-int ArtilSolver::Sens(int pos_sensor)
+void ArtilSolver::SensorsUpdate()
 {
     Sensors.RLeds(senso);
-    return senso[pos_sensor];
+    //return senso;
 }
+
+
+
+int ArtilSolver::Val_Sensor(int pos_sensor)
+{
+int valor_sensor=senso[pos_sensor];
+return valor_sensor;
+}
+
 
 int ArtilSolver::IMUAngle()
 {
     turnSensorUpdate();
     lastangle = abs(turnAngle / turnAngle1);
     return lastangle;
+}
+
+void ArtilSolver::IMUpdate()
+{
+    turnSensorUpdate();
 }
 
 void ArtilSolver::Sound(int sonido)
