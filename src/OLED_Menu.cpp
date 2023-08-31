@@ -7,7 +7,7 @@
 
 ArtilSolver Robot;
 
- //U8G2_SSD1306_128X64_NONAME_F_SW_I2C u8g2(U8G2_R0, /* clock=*/16, /* data=*/17, /* reset=*/U8X8_PIN_NONE); // All Boards without Reset of the Display
+// U8G2_SSD1306_128X64_NONAME_F_SW_I2C u8g2(U8G2_R0, /* clock=*/16, /* data=*/17, /* reset=*/U8X8_PIN_NONE); // All Boards without Reset of the Display
 
 U8G2_SSD1306_128X64_NONAME_F_HW_I2C u8g2(U8G2_R0, /* reset=*/U8X8_PIN_NONE);
 
@@ -266,23 +266,31 @@ void loop(void)
         opcion_siguiente = 0;
     }
 
-    if (submenu == 2 && menuflag == true)
+    if (submenu == 4 && menuflag == true)
     {
-        if (digitalRead(12) == 0)
-        {
-            Robot.Sound(440, 50);
-            // el operador % significa modulo
-            botonIz_Submenu = (botonIz_Submenu + 1) % 2;
-            bot_iz_alte = botonIz_Submenu + 2;
-            delay(100);
-        }
-        if (digitalRead(28) == 0)
-        {
-            Robot.Sound(261, 50);
-            // el operador % significa modulo
-            botonDer_Submenu = (botonDer_Submenu + 1) % 2;
-            delay(100);
-        }
+        // if (digitalRead(12) == 0)
+        // {
+        //     Robot.Sound(440);
+        //     // el operador % significa modulo
+        //     Robot.MotorSpeed(0, 200);
+        // }
+        // else
+        // {
+        //     Robot.MotorSpeed(0, 0);
+        //     Robot.stopSound();
+        // }
+        // if (digitalRead(28) == 0)
+        // {
+        //     Robot.Sound(261);
+        //     // el operador % significa modulo
+        //     Robot.MotorSpeed(200, 0);
+        //     Robot.stopSound();
+        // }
+        // else
+        // {
+        //     Robot.MotorSpeed(0, 0);
+        //     Robot.stopSound();
+        // }
     }
 
     if (digitalRead(26) == 0)
@@ -310,6 +318,7 @@ void loop(void)
         u8g2.drawStr(26, 59, menu_opciones[opcion_siguiente]);
         u8g2.sendBuffer(); // transfer internal memory to the display
         menuflag = false;
+        // submenu = 0;
 
         break;
     case 1:
@@ -317,14 +326,14 @@ void loop(void)
         switch (opcion_seleccionada)
         {
         case 0:
-            u8g2.clearBuffer();             // clear the internal memory
-            u8g2.setFont(u8g_font_7x14B);   // choose a suitable font
-            //u8g2.drawStr(26, 10, "Buzzer"); // write something to the internal memory
+            u8g2.clearBuffer();           // clear the internal memory
+            u8g2.setFont(u8g_font_7x14B); // choose a suitable font
+            // u8g2.drawStr(26, 10, "Buzzer"); // write something to the internal memory
             u8g2.drawXBMP(10, 10, 108, 44, GOT);
-            u8g2.sendBuffer();              // transfer internal memory to the display
+            u8g2.sendBuffer(); // transfer internal memory to the display
             gameofthronessong();
             botonState2 = 0;
-            // u8g2.clearBuffer(); 
+            // u8g2.clearBuffer();
             // u8g2.setFont(u8g_font_7x14); // choose a suitable font
             // u8g2.drawXBMP(0, 22, 128, 23, epd_bitmap__selector);
             // u8g2.drawXBMP(120, 0, 8, 64, epd_bitmap__scrollbar);
@@ -398,7 +407,9 @@ void loop(void)
             u8g2.drawXBMP(10, 25, 16, 16, epd_bitmap__motoricon);
             u8g2.drawXBMP(50, 25, 16, 16, epd_bitmap__motoricon);
             u8g2.sendBuffer(); // transfer internal memory to the display
+            submenu = 4;
             break;
+
         case 5:
 
             u8g2.clearBuffer();                 // clear the internal memory

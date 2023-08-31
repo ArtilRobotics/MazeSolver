@@ -6,13 +6,6 @@
 
 ArtilSolver Maze;
 
-// int front_right;
-// int front_left;
-// int side_right;
-// int side_left;
-// int diagonal_right;
-// int diagonal_left;
-
 int front_right;
 int front_left;
 int side_right;
@@ -68,7 +61,6 @@ void loop()
     Serial.print(",");
     Serial.println(side_left);
 
-    // Serial.println(front_right);
 
     if (side_right < 130)
     {
@@ -86,22 +78,8 @@ void loop()
     {
         Maze.MotorSpeed(80, -80);
     }
-
-    // else if (front_right > 205 && front_left > 100 && side_right > 350 && side_left > 600)
-    // {
-    //     Maze.MotorSpeed(-70, 70);
-    //     Maze.IMUrotation(180);
-    // }
-
-    // else if (front_right > 205 && front_left > 100 && side_right > 300 && side_left < 500)
-    // {
-    //     Maze.MotorSpeed(20, 90);
-    //     Maze.IMUrotation(45);
-    // }
-
     else
     {
-        // Maze.IMUpdate();
         Maze.MotorSpeed(80, 80);
     }
 }
