@@ -268,24 +268,25 @@ void loop(void)
 
     if (submenu == 4 && menuflag == true)
     {
-        // if (digitalRead(12) == 0)
-        // {
-        //     Robot.Sound(440);
-        //     // el operador % significa modulo
-        //     Robot.MotorSpeed(0, 200);
-        // }
-        // else
-        // {
-        //     Robot.MotorSpeed(0, 0);
-        //     Robot.stopSound();
-        // }
-        // if (digitalRead(28) == 0)
-        // {
-        //     Robot.Sound(261);
-        //     // el operador % significa modulo
-        //     Robot.MotorSpeed(200, 0);
-        //     Robot.stopSound();
-        // }
+        if (digitalRead(12) == LOW)
+        {
+            Robot.Sound(440);
+            // el operador % significa modulo
+            Robot.MotorSpeed(200, 0);
+        }
+        else if (digitalRead(28) == LOW)
+        {
+            Robot.Sound(261);
+            // el operador % significa modulo
+            Robot.MotorSpeed(0, 200);
+        }
+        else{
+
+            Robot.MotorSpeed(0,0);
+            Robot.stopSound();
+
+        }
+        
         // else
         // {
         //     Robot.MotorSpeed(0, 0);
@@ -318,7 +319,7 @@ void loop(void)
         u8g2.drawStr(26, 59, menu_opciones[opcion_siguiente]);
         u8g2.sendBuffer(); // transfer internal memory to the display
         menuflag = false;
-        // submenu = 0;
+        submenu = 0;
 
         break;
     case 1:

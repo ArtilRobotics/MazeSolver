@@ -8,8 +8,8 @@ int ELed[] = {15, 13, 14};  // F D S
 int sensores[7];
 // Motor_Izq
 #define MA 4
-#define AIN1 6
-#define AIN2 5
+#define AIN1 5
+#define AIN2 6
 // Motor_Der
 #define MB 9
 #define BIN1 7
