@@ -47,6 +47,8 @@ void ArtilSolver::init()
     turnSensorReset();
     Motores.init(MA, AIN1, AIN2, MB, BIN1, BIN2);
     Sensors.init(RRLed, RLLed, ELed);
+    
+
 }
 
 void ArtilSolver::MotorSpeed(int velizq, int velder)

@@ -199,6 +199,7 @@ char Sensor_FI[5];
 char Sensor_LD[5];
 char Sensor_LI[5];
 char Bateria_lvl[4];
+char Intensidad[4];
 
 bool menuflag = false;
 
@@ -210,6 +211,8 @@ int submenu = 0;
 
 int soundIMU;
 
+int intensidad_led = 0;
+
 void setup(void)
 {
     Robot.init();
@@ -217,6 +220,7 @@ void setup(void)
     pinMode(12, INPUT_PULLUP);
     pinMode(26, INPUT_PULLUP);
     pinMode(28, INPUT_PULLUP);
+    pinMode(27, OUTPUT);
     Serial.begin(115200);
     u8g2.clearBuffer();          // clear the internal memory
     u8g2.setFont(u8g_font_7x14); // choose a suitable font
@@ -253,6 +257,8 @@ void loop(void)
             }
             delay(200);
         }
+
+        analogWrite(27, 0);
     }
 
     opcion_anterior = opcion_seleccionada - 1;
@@ -280,19 +286,41 @@ void loop(void)
             // el operador % significa modulo
             Robot.MotorSpeed(0, 200);
         }
-        else{
-
-            Robot.MotorSpeed(0,0);
+        else
+        {
+            Robot.MotorSpeed(0, 0);
             Robot.stopSound();
-
         }
-        
-        // else
-        // {
-        //     Robot.MotorSpeed(0, 0);
-        //     Robot.stopSound();
-        // }
     }
+
+    if (submenu == 3 && menuflag == true)
+    {
+        if (digitalRead(12) == LOW)
+        {
+            Robot.Sound(440);
+            intensidad_led = intensidad_led - 10;
+        }
+        else if (digitalRead(28) == LOW)
+        {
+            Robot.Sound(261);
+            intensidad_led = intensidad_led + 10;
+        }
+        else
+        {
+            Robot.stopSound();
+        }
+    }
+
+    if (intensidad_led < 0)
+    {
+        intensidad_led = 0;
+    }
+    if (intensidad_led > 255)
+    {
+        intensidad_led = 255;
+    }
+
+    analogWrite(27, intensidad_led);
 
     if (digitalRead(26) == 0)
     {
@@ -397,7 +425,10 @@ void loop(void)
             u8g2.clearBuffer();           // clear the internal memory
             u8g2.setFont(u8g_font_7x14B); // choose a suitable font
             u8g2.drawStr(26, 10, "LEDs"); // write something to the internal memory
-            u8g2.sendBuffer();            // transfer internal memory to the display
+            sprintf(Intensidad, "%d", intensidad_led);
+            u8g2.drawStr(26, 30, Intensidad);
+            u8g2.sendBuffer(); // transfer internal memory to the display
+            submenu = 3;
             break;
 
         case 4:
